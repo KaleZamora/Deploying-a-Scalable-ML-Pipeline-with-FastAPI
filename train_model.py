@@ -13,9 +13,9 @@ from ml.model import (
     train_model,
 )
 # TODO: load the cencus.csv data
-project_path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
-data_path = os.path.join(project_path, "data", "census.csv")
-print(data_path)
+#project_path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+data_path = os.path.join("data", "census.csv")
+#print(data_path)
 data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
@@ -40,7 +40,7 @@ X_train, y_train, encoder, lb = process_data(
     categorical_features=cat_features, 
     label="salary", 
     training=True
-    )
+)
 
 X_test, y_test, _, _ = process_data(
     test,
@@ -55,9 +55,9 @@ X_test, y_test, _, _ = process_data(
 model = train_model(X_train, y_train)
 
 # save the model and the encoder
-model_path = os.path.join(project_path, "model", "model.pkl")
+model_path = os.path.join( "model", "model.pkl")
 save_model(model, model_path)
-encoder_path = os.path.join(project_path, "model", "encoder.pkl")
+encoder_path = os.path.join( "model", "encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model
