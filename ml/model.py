@@ -15,7 +15,7 @@ def train_model(X_train, y_train):
     X_train : np.array
         Training data.
     y_train : np.array
-        Labels.
+        Labels.=[]
     Returns
     -------
     model
